@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     int imagenes[] = { R.drawable.toledo, R.drawable.ciudadreal, R.drawable.albacete,
             R.drawable.cuenca, R.drawable.guadalajara};
 
+    //region listaMultiselect
 
     public void onItemClick(AdapterView<?> a, View view, int position, long id){
         //TextView t=(TextView)findViewById(R.id.textView3);
@@ -40,7 +41,9 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
             }
         //t.setText(seleccionado);
     }
+    //endregion
 
+    //region listaSeleccionUnica
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,4 +105,8 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
         }
     }
+
+    //endregion
+
+
 }
