@@ -32,7 +32,7 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="75"
+                    android:layout_weight="1"
                     android:text="Cantidad de veces que lo\n has consumido?\n" />
 
                 <EditText
@@ -42,7 +42,7 @@
                     android:ems="10"
                     android:hint="Numero"
                     android:inputType="number"
-                    android:layout_weight="25"/>
+                    android:layout_weight="1"/>
             </TableRow>
         <TableRow
             android:layout_width="match_parent"
