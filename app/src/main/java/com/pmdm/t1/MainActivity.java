@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements ListView.OnItemClickListener, Spinner.OnItemSelectedListener{
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class MainActivity extends AppCompatActivity implements ListView.OnItemClickListener, Spinner.OnItemSelectedListener , DialogoFecha.OnFechaSeleccionada{
 
     String[] ciudades = { "Toledo", "Ciudad Real", "Albacete","Cuenca", "Guadalajara" };
 
@@ -108,5 +112,16 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     //endregion
 
+    //region fecha
+    public void onClickFecha(View view) {
+        DialogoFecha d=new DialogoFecha();
+        d.show(getFragmentManager(),"Mi diálogo Fecha");
+    }
 
+    @Override
+    public void onResultadoFecha(GregorianCalendar fecha) {
+        EditText et=(EditText)findViewById(R.id.etFechaNacimiento);
+        et.setText(fecha.get(Calendar.DAY_OF_MONTH)+"/"+(fecha.get(Calendar.MONTH)+1)+"/"+fecha.get(Calendar.YEAR));
+    }
+    //endregion
 }
